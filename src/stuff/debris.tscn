@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bskmn6uqneick"]
+
+[ext_resource type="Texture2D" uid="uid://c3035wgtlcw3n" path="res://assets/art/meteor.png" id="1_brsao"]
+[ext_resource type="Script" path="res://scripts/debris.gd" id="1_vj6kv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dn340"]
+radius = 2.0
+
+[node name="Debris" type="RigidBody2D" groups=["detached"]]
+collision_layer = 20
+collision_mask = 20
+gravity_scale = 0.1
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_vj6kv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_brsao")
+hframes = 6
+vframes = 2
+frame = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dn340")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

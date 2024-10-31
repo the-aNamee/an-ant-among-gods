@@ -1,0 +1,930 @@
+[gd_scene load_steps=55 format=4 uid="uid://c5rax47ut0iyu"]
+
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_x4xh5"]
+[ext_resource type="TileSet" uid="uid://dpb0mxk70wqkd" path="res://assets/tilemap.tres" id="2_6q6xy"]
+[ext_resource type="Script" path="res://scripts/tile_map.gd" id="2_y8ech"]
+[ext_resource type="PackedScene" uid="uid://d2v1xwq5lmkhv" path="res://stuff/label.tscn" id="3_3q2w3"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="4_0v8nh"]
+[ext_resource type="PackedScene" uid="uid://dms2w8s3krl7y" path="res://stuff/player.tscn" id="4_pu1xk"]
+[ext_resource type="PackedScene" uid="uid://buuipo1jgis5d" path="res://stuff/trigger_box.tscn" id="7_gdc2s"]
+[ext_resource type="Script" path="res://scripts/checkpoint_manager.gd" id="8_5dx75"]
+[ext_resource type="PackedScene" uid="uid://coujkq0ejnokl" path="res://stuff/checkpoint.tscn" id="8_fwijq"]
+[ext_resource type="Script" path="res://scripts/bolder_spawner.gd" id="9_wruyl"]
+[ext_resource type="PackedScene" uid="uid://chaiu77ufqu8y" path="res://stuff/crater.tscn" id="11_upre1"]
+[ext_resource type="Script" path="res://scripts/meteor_spawner.gd" id="12_wweye"]
+[ext_resource type="Script" path="res://scripts/ares_stuff.gd" id="13_c517a"]
+[ext_resource type="PackedScene" uid="uid://bytyht21p1nxb" path="res://stuff/ares.tscn" id="13_gpuk2"]
+[ext_resource type="Script" path="res://scripts/ares_markers.gd" id="14_buxyi"]
+[ext_resource type="PackedScene" uid="uid://3xdfk7cq71ge" path="res://stuff/ares_marker.tscn" id="14_vrmu7"]
+[ext_resource type="PackedScene" uid="uid://b27ipqa20b2f0" path="res://stuff/ares_trigger.tscn" id="16_bxuo7"]
+
+[sub_resource type="Resource" id="Resource_tj04d"]
+script = ExtResource("4_0v8nh")
+text = "Gods look down on moratals, simply not caring about them."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_3u2od"]
+script = ExtResource("4_0v8nh")
+text = "Mortals are small compared to the giant figures that live on mount olympus."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_00w6x"]
+script = ExtResource("4_0v8nh")
+text = "Most mortals live their lives simply hoping never to run into an immortal."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_h7c8q"]
+script = ExtResource("4_0v8nh")
+text = "But some decide that they could do something greater with their life."
+time = 3.0
+signal_id = 1
+
+[sub_resource type="Resource" id="Resource_jjf6c"]
+script = ExtResource("4_0v8nh")
+text = "Once upon a time a mortal decided that he wanted to be remembered forever."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_77hc8"]
+script = ExtResource("4_0v8nh")
+text = "He decided that in order to do so he would climb to the top of mount olympus."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_uqs1v"]
+script = ExtResource("4_0v8nh")
+text = "A journey that would surely be remembered forever."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_mx2nl"]
+script = ExtResource("4_0v8nh")
+text = "But such an ambitious journey could never be easy."
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_h7n4p"]
+script = ExtResource("4_0v8nh")
+text = "The gods were fighting on that day causing the entire mountain to shake."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_rgdpb"]
+script = ExtResource("4_0v8nh")
+text = "This should have shown the mortal just how insignificant he was, causing him to turn back."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_t4noh"]
+script = ExtResource("4_0v8nh")
+text = "But on he went, not turning back despite the impossibility of his task. Until finally"
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_ecdw5"]
+script = ExtResource("4_0v8nh")
+text = "then the gods' anger subsided and so did the landslide, allowing him to continue."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_0wxw7"]
+script = ExtResource("4_0v8nh")
+text = "He took a deep breath, composing himself, knowing that this wasn’t even the hardest part."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_f53kg"]
+script = ExtResource("4_0v8nh")
+text = "A few rocks were the least of his worries though."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_qinak"]
+script = ExtResource("4_0v8nh")
+text = "Giant balls of fire falling from the sky."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_2elsv"]
+script = ExtResource("4_0v8nh")
+text = "Who knows what the gods are doing this time."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_bi50m"]
+script = ExtResource("4_0v8nh")
+text = "The mortal went back and looked down the mountain that he wass climbing."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_xa4yd"]
+script = ExtResource("4_0v8nh")
+text = "Are these from Hades?"
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_saw3k"]
+script = ExtResource("4_0v8nh")
+text = "Hephaestus maybe?"
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_xreec"]
+script = ExtResource("4_0v8nh")
+text = "But it doesn’t last forever either, allowing the mortal to continue."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_d27c5"]
+script = ExtResource("4_0v8nh")
+text = "The mortal looked up and saw that he was nearly at the top."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_rjm7q"]
+script = ExtResource("4_0v8nh")
+text = "His journey was nearly over."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_ia5hw"]
+script = ExtResource("4_0v8nh")
+text = "The peak was in sight."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_8u45p"]
+script = ExtResource("4_0v8nh")
+text = "Just a little bit more."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_fnvtd"]
+script = ExtResource("4_0v8nh")
+text = "But…"
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_152yy"]
+script = ExtResource("4_0v8nh")
+text = "A god, ares, appeared seeming mad about something."
+time = 3.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_8hc7x"]
+script = ExtResource("4_0v8nh")
+text = "With that {{player_name}} had won."
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_epq28"]
+script = ExtResource("4_0v8nh")
+text = "He had defeated a god."
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_sdm3n"]
+script = ExtResource("4_0v8nh")
+text = "He no longer needed to climb the mounten."
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_vwtei"]
+script = ExtResource("4_0v8nh")
+text = "He had done something worth remembering."
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_y2wkp"]
+script = ExtResource("4_0v8nh")
+text = "Forever there would be a crack in Ares armor."
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_a8qvv"]
+script = ExtResource("4_0v8nh")
+text = "The cracked piece flies across the Earth at night."
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_4eydr"]
+script = ExtResource("4_0v8nh")
+text = "Whenever you see a shooting star you know know what it is."
+time = 4.0
+signal_id = 0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a06gw"]
+normal = Vector2(1, 0)
+
+[sub_resource type="GDScript" id="GDScript_nupc2"]
+script/source = "extends Node
+
+
+@export var main_tilemap: TileMapLayer
+@onready var craters_tilemap = $CratersTiles
+@onready var sub_tiles = $SubTiles
+@export var camera: Camera2D
+
+func _ready():
+	craters_tilemap.hide()
+	sub_tiles.hide()
+"
+
+[sub_resource type="GDScript" id="GDScript_jrflt"]
+resource_name = "DebugSpawn"
+script/source = "extends Marker2D
+
+@export var player: Node2D
+@export var active = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if OS.has_feature(\"debug\") && active:
+		player.global_position = global_position
+"
+
+[sub_resource type="GDScript" id="GDScript_62c5b"]
+resource_name = "Pauser"
+script/source = "extends Node
+
+@export var pause_on_start = false
+
+func _ready():
+	if OS.has_feature(\"release\") || !pause_on_start:
+		return
+	
+	get_tree().paused = true
+
+
+func _input(event):
+	if OS.has_feature(\"release\"):
+		return
+	
+	if event.is_action_pressed(\"ui_down\"):
+		get_tree().paused = true
+	elif event.is_action_released(\"ui_down\"):
+		get_tree().paused = false
+"
+
+[node name="World" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+process_mode = 3
+position = Vector2(4417, -1139)
+limit_left = 0
+limit_right = 10288
+limit_bottom = 324
+limit_smoothed = true
+script = ExtResource("1_x4xh5")
+target = NodePath("../Player")
+
+[node name="Timer" type="Timer" parent="Camera"]
+wait_time = 0.2
+one_shot = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["map"]]
+tile_map_data = PackedByteArray("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AABsAPP/AAALAAUAAABtAPP/AAALAAUAAABuAPL/AAAKAAUAAABvAPL/AAALAAUAAABwAPL/AAALAAUAAABxAPL/AAALAAUAAAByAPL/AAAOAAgAAAByAPH/AAAKAAUAAABzAPH/AAALAAUAAAB0APH/AAALAAUAAAB1APD/AAAKAAUAAAB2APD/AAALAAUAAAB3AO//AAAKAAUAAAB4AO//AAALAAUAAAB5AO7/AAAKAAUAAAB6AO7/AAALAAUAAAB7AO3/AAAKAAUAAAB8AO3/AAALAAUAAAB9AO3/AAALAAUAAAB+AOz/AAAKAAUAAAB/AOz/AAALAAUAAACAAOz/AAALAAUAAACBAOv/AAAKAAUAAACCAOv/AAALAAUAAACDAOv/AAALAAUAAACFAOr/AAALAAUAAACGAOr/AAALAAUAAACHAOr/AAALAAUAAACIAOr/AAALAAUAAACJAOr/AAALAAUAAACKAOr/AAALAAUAAACLAOr/AAALAAUAAACMAOn/AAAKAAUAAACNAOn/AAALAAUAAACOAOn/AAALAAUAAACPAOn/AAALAAUAAACQAOn/AAALAAUAAACRAOn/AAALAAUAAACSAOn/AAALAAUAAACTAOn/AAALAAUAAACUAOn/AAALAAUAAACVAOj/AAAKAAUAAACWAOj/AAALAAUAAACXAOf/AAAKAAUAAACYAOb/AAAKAAUAAACZAOX/AAAKAAUAAACaAOT/AAAKAAUAAACbAOP/AAAKAAUAAACcAOP/AAALAAUAAACdAOL/AAAKAAUAAACeAOH/AAAKAAUAAACfAOH/AAALAAUAAACgAOD/AAAKAAUAAAChAOD/AAALAAUAAACiAOD/AAALAAUAAACjAOD/AAALAAUAAACkAN//AAAKAAUAAAClAN//AAALAAUAAACmAN//AAALAAUAAACnAN7/AAAKAAUAAACoAN7/AAALAAUAAACpAN3/AAAKAAUAAACqAN3/AAAOAAgAAACrANz/AAALAAUAAACsANv/AAAKAAUAAACtANv/AAALAAUAAACuANr/AAAKAAUAAACvANr/AAALAAUAAACwANr/AAALAAUAAACxANn/AAAKAAUAAACyANn/AAALAAUAAACzANn/AAALAAUAAAC0ANj/AAAKAAUAAAC1ANj/AAALAAUAAAC2ANj/AAALAAUAAAC3ANf/AAAKAAUAAAC4ANf/AAALAAUAAAC5ANb/AAAKAAYAAAC5ANX/AAAKAAUAAAC6ANT/AAAKAAUAAAC7ANT/AAALAAUAAAC8ANT/AAALAAUAAAC9ANT/AAALAAUAAAC+ANP/AAAKAAUAAAC/ANP/AAALAAUAAADAANP/AAALAAUAAADBANP/AAALAAUAAADCANL/AAAKAAUAAADDANL/AAALAAUAAADEANL/AAALAAUAAADFANH/AAAKAAUAAADGANH/AAALAAUAAADHANH/AAALAAUAAADIAND/AAAKAAUAAADJAND/AAALAAUAAADKAND/AAALAAUAAADLAM//AAAKAAUAAADMAM//AAALAAUAAADNAM//AAALAAUAAADOAM//AAALAAUAAADPAM//AAALAAUAAADQAM7/AAAKAAUAAADRAM7/AAALAAUAAADSAM7/AAALAAUAAADTAM7/AAALAAUAAADUAM7/AAALAAUAAADVAM7/AAALAAUAAADWAM7/AAALAAUAAADXAM7/AAALAAUAAADYAM3/AAAKAAUAAADZAMz/AAAKAAUAAADaAMv/AAAKAAUAAADbAMv/AAALAAUAAADcAMv/AAALAAUAAADdAMr/AAAKAAUAAADeAMr/AAALAAUAAADfAMr/AAALAAUAAADgAMr/AAALAAUAAADhAMr/AAALAAUAAADiAMn/AAAKAAUAAADjAMn/AAALAAUAAADkAMn/AAALAAUAAADlAMn/AAALAAUAAADmAMj/AAAKAAUAAADnAMj/AAALAAUAAADoAMj/AAALAAUAAADpAMj/AAALAAUAAADqAMf/AAAKAAUAAADrAMf/AAALAAUAAADsAMf/AAALAAUAAADtAMf/AAALAAUAAADuAMf/AAALAAUAAADvAMb/AAAKAAUAAADwAMb/AAALAAUAAADxAMb/AAALAAUAAADyAMX/AAAKAAUAAADzAMX/AAALAAUAAACEAOr/AAAKAAUAAACgAOH/AAAOAAgAAACqANz/AAAKAAUAAABSAPn/AAAOAAgAAABiAPj/AAAOAAgAAABkAPf/AAAOAAgAAABmAPb/AAAOAAgAAABnAPX/AAAOAAgAAABuAPP/AAAOAAgAAAB1APH/AAAOAAgAAAB3APD/AAAOAAgAAAB5AO//AAAOAAgAAAB7AO7/AAAOAAgAAACBAOz/AAAOAAgAAACEAOv/AAAOAAgAAACMAOr/AAAOAAgAAACVAOn/AAAOAAgAAACXAOj/AAAOAAgAAACYAOf/AAAOAAgAAACZAOb/AAAOAAgAAACaAOX/AAAOAAgAAACbAOT/AAAOAAgAAACdAOP/AAAOAAgAAACeAOL/AAAOAAgAAACkAOD/AAAOAAgAAACpAN7/AAAOAAgAAACnAN//AAAOAAgAAACuANv/AAAOAAgAAACxANr/AAAOAAgAAAC0ANn/AAAOAAgAAAC3ANj/AAAOAAgAAAC5ANf/AAAOAAgAAAC6ANX/AAAOAAgAAAC+ANT/AAAOAAgAAADCANP/AAAOAAgAAADFANL/AAAOAAgAAADIANH/AAAOAAgAAADLAND/AAAOAAgAAADQAM//AAAOAAgAAADYAM7/AAAOAAgAAADZAM3/AAAOAAgAAADaAMz/AAAOAAgAAADdAMv/AAAOAAgAAADiAMr/AAAOAAgAAADmAMn/AAAOAAgAAADqAMj/AAAOAAgAAADvAMf/AAAOAAgAAADyAMb/AAAOAAgAAAD+/w8AAAAAAAEAAAD0AMX/AAALAAUAAAD1AMX/AAALAAUAAAD2AMT/AAAKAAUAAAD3AMP/AAAKAAUAAAD4AMP/AAALAAUAAAD5AMP/AAALAAUAAAD6AMP/AAALAAUAAAD7AML/AAAKAAUAAAD8AML/AAALAAUAAAD9AML/AAALAAUAAAD+AML/AAALAAUAAAD/AML/AAAOAAgAAAD/AMH/AAAKAAUAAAAAAcH/AAALAAUAAAABAcH/AAALAAUAAAACAcH/AAALAAUAAAADAcD/AAAKAAUAAAAEAb//AAAKAAUAAAAFAb//AAALAAUAAAAGAb//AAALAAUAAAAHAb//AAAMAAUAAAAHAcD/AAAOAAUAAAAIAcD/AAALAAUAAAAJAcD/AAALAAUAAAAKAb//AAAKAAUAAAALAb//AAAOAAgAAAALAb7/AAAKAAUAAAAMAb7/AAALAAUAAAANAb7/AAAOAAgAAAANAb3/AAAKAAUAAAAOAb3/AAALAAUAAAAPAb3/AAAOAAgAAAAPAbz/AAAKAAUAAAAQAbz/AAALAAUAAAARAbz/AAALAAUAAAASAbz/AAALAAUAAAATAbz/AAALAAUAAAAUAbz/AAAOAAgAAAAUAbv/AAAKAAUAAAAVAbv/AAALAAUAAAAWAbr/AAAKAAUAAAAXAbr/AAAOAAgAAAAXAbn/AAAKAAUAAAAYAbn/AAALAAUAAAAZAbn/AAAOAAgAAAAZAbj/AAAKAAUAAAAaAbj/AAALAAUAAAD2AMX/AAAOAAgAAAD3AMT/AAAOAAgAAAD7AMP/AAAOAAgAAAADAcH/AAAOAAgAAAAEAcD/AAAOAAgAAAAKAcD/AAAOAAgAAAAWAbv/AAAOAAgAAAAbAbj/AAALAAUAAAAcAbj/AAALAAUAAAAdAbj/AAALAAUAAAAeAbj/AAALAAUAAAAfAbj/AAALAAUAAAAgAbj/AAALAAUAAAAhAbj/AAALAAUAAAAiAbj/AAALAAUAAAAjAbj/AAALAAUAAAAkAbj/AAALAAUAAAAlAbf/AAAKAAUAAAAmAbf/AAALAAUAAAAnAbf/AAALAAUAAAAoAbf/AAALAAUAAAApAbf/AAALAAUAAAAqAbf/AAALAAUAAAArAbf/AAALAAUAAAAsAbf/AAALAAUAAAAtAbf/AAALAAUAAAAuAbf/AAAOAAgAAAAvAbb/AAAOAAgAAAAvAbX/AAAKAAUAAAAwAbX/AAAOAAgAAAAwAbT/AAAKAAUAAAAxAbT/AAALAAUAAAAyAbP/AAAKAAUAAAAzAbP/AAALAAUAAAA0AbL/AAAKAAUAAAA1AbL/AAALAAUAAAA2AbH/AAAKAAUAAAA3AbH/AAALAAUAAAA4AbD/AAAKAAUAAAA5AbD/AAAOAAgAAAA5Aa//AAAKAAUAAAA6Aa//AAALAAUAAAAuAbb/AAAKAAUAAAA7Aa//AAAMAAUAAAA8AbD/AAALAAUAAAA9AbD/AAALAAUAAAA+AbD/AAAMAAUAAAA/AbH/AAALAAUAAABAAbH/AAALAAUAAABBAbH/AAALAAUAAABCAbH/AAALAAUAAABDAbH/AAAOAAgAAABDAbD/AAAKAAUAAABEAbD/AAALAAUAAABFAbD/AAALAAUAAABGAa//AAAKAAUAAABHAa//AAALAAUAAABIAa7/AAAKAAUAAABJAa7/AAAOAAgAAABJAa3/AAAKAAUAAABKAa3/AAALAAUAAABLAaz/AAAKAAYAAABLAav/AAAKAAUAAABMAar/AAAKAAUAAABNAar/AAAOAAgAAABNAan/AAAKAAUAAABOAan/AAALAAUAAABPAaj/AAAKAAUAAABQAaj/AAAOAAgAAABQAaf/AAAKAAYAAABQAab/AAAKAAUAAABRAab/AAAOAAgAAABRAaX/AAAKAAUAAABSAaX/AAAOAAgAAABSAaT/AAAKAAUAAABTAaP/AAAKAAYAAABTAaL/AAAKAAUAAABUAaL/AAAOAAgAAABUAaH/AAAKAAYAAABUAaD/AAAKAAUAAABVAaD/AAAOAAgAAABVAZ//AAAKAAUAAABWAZ//AAALAAUAAABXAZ//AAALAAUAAABYAZ//AAALAAUAAABZAZ//AAALAAUAAABaAZ//AAALAAUAAABbAZ//AAALAAUAAABcAZ//AAALAAUAAABdAZ//AAALAAUAAABeAZ//AAALAAUAAABfAZ//AAALAAUAAABgAZ//AAALAAUAAABhAZ//AAALAAUAAABiAZ//AAALAAUAAABjAZ//AAALAAUAAABkAZ//AAALAAUAAABlAZ//AAAOAAgAAABlAZ7/AAAKAAUAAABmAZ3/AAAKAAUAAABnAZ3/AAAOAAgAAABnAZz/AAAKAAUAAABoAZz/AAALAAUAAABpAZz/AAAMAAUAAABpAZ3/AAAOAAUAAABqAZ3/AAAMAAUAAABrAZ7/AAALAAUAAABsAZ7/AAAMAAUAAABsAZ//AAAOAAUAAABtAZ//AAALAAUAAABuAZ//AAALAAUAAABvAZ//AAALAAUAAABwAZ//AAALAAUAAABxAZ//AAALAAUAAAByAZ//AAALAAUAAABzAZ//AAAOAAgAAABzAZ7/AAAKAAUAAAB0AZ7/AAALAAUAAAB1AZ7/AAAOAAgAAAB1AZ3/AAAKAAUAAAB2AZ3/AAAOAAgAAAB2AZz/AAAKAAUAAAB3AZz/AAAMAAUAAAB3AZ3/AAAOAAUAAAB4AZ3/AAAMAAUAAAB4AZ7/AAAMAAYAAAB4AZ//AAAOAAUAAAB5AZ//AAAMAAUAAAB5AaD/AAAMAAYAAAB5AaH/AAAMAAYAAAB5AaL/AAAMAAYAAAB6AaP/AAAMAAUAAAB6AaT/AAAMAAYAAAB6AaX/AAAOAAUAAAB7AaX/AAAMAAUAAAB7Aab/AAAMAAYAAAB7Aaf/AAAOAAUAAAB8Aaf/AAAMAAUAAAB9Aaj/AAALAAUAAAB+Aaj/AAAMAAUAAAB+Aan/AAAOAAUAAAB/Aan/AAALAAUAAACAAan/AAALAAUAAACBAan/AAALAAUAAACCAan/AAAOAAgAAACCAaj/AAAKAAUAAACDAaj/AAALAAUAAACEAaf/AAAKAAUAAACFAaf/AAAOAAgAAACFAab/AAAKAAUAAACGAab/AAALAAUAAACHAaX/AAAKAAYAAACHAaT/AAAKAAUAAACIAaT/AAAOAAgAAACIAaP/AAAKAAUAAACJAaL/AAAKAAYAAACJAaH/AAAKAAUAAACKAaH/AAAOAAgAAACKAaD/AAAKAAYAAACKAZ//AAAKAAYAAACKAZ7/AAAKAAYAAACLAZ3/AAAOAAgAAACKAZ3/AAAKAAUAAACLAZz/AAAKAAUAAACMAZv/AAAKAAYAAACMAZr/AAAKAAUAAACNAZr/AAAOAAgAAACNAZn/AAAKAAUAAACOAZn/AAAOAAgAAACOAZj/AAAKAAUAAACPAZj/AAAOAAgAAACPAZf/AAAKAAUAAACQAZf/AAAOAAgAAACQAZb/AAAKAAUAAAAlAbj/AAAOAAgAAABmAZ7/AAAOAAgAAACRAZb/AAALAAUAAACSAZb/AAALAAUAAACTAZb/AAAOAAgAAACTAZX/AAAKAAUAAACUAZX/AAALAAUAAACVAZX/AAALAAUAAACWAZX/AAALAAUAAACXAZX/AAALAAUAAACYAZX/AAALAAUAAACZAZX/AAALAAUAAACaAZX/AAAMAAUAAACbAZb/AAALAAUAAACcAZb/AAALAAUAAACdAZb/AAALAAUAAACeAZb/AAALAAUAAACfAZb/AAALAAUAAACgAZb/AAALAAUAAAChAZb/AAALAAUAAACiAZb/AAALAAUAAACjAZb/AAALAAUAAACkAZb/AAALAAUAAAClAZb/AAALAAUAAACmAZb/AAALAAUAAACnAZb/AAALAAUAAACoAZb/AAALAAUAAACpAZb/AAALAAUAAACqAZb/AAAOAAgAAACqAZX/AAAKAAUAAACrAZX/AAALAAUAAACsAZX/AAALAAUAAACtAZX/AAALAAUAAACuAZX/AAALAAUAAACvAZX/AAALAAUAAACwAZX/AAALAAUAAACxAZX/AAALAAUAAACyAZX/AAALAAUAAACzAZX/AAALAAUAAAC0AZX/AAALAAUAAAC1AZX/AAALAAUAAAC2AZX/AAALAAUAAAC3AZX/AAALAAUAAAC4AZX/AAALAAUAAAC5AZX/AAALAAUAAAC6AZX/AAALAAUAAAC7AZX/AAALAAUAAAC8AZX/AAALAAUAAAC9AZX/AAALAAUAAAC+AZX/AAALAAUAAAC/AZX/AAAMAAUAAADAAZb/AAALAAUAAADBAZb/AAALAAUAAADCAZb/AAALAAUAAADDAZb/AAALAAUAAADEAZb/AAALAAUAAADFAZb/AAALAAUAAADGAZb/AAALAAUAAADHAZb/AAAOAAgAAADHAZX/AAAKAAUAAADIAZX/AAALAAUAAADJAZT/AAAKAAUAAADKAZT/AAALAAUAAADLAZT/AAALAAUAAADMAZP/AAAKAAUAAADNAZP/AAALAAUAAADOAZP/AAAOAAgAAADOAZL/AAAKAAUAAADPAZL/AAALAAUAAADQAZH/AAAKAAUAAADRAZH/AAALAAUAAADSAZH/AAAOAAgAAADSAZD/AAAKAAUAAADTAZD/AAALAAUAAADUAZD/AAAOAAgAAADUAY//AAAKAAUAAADVAY//AAALAAUAAADWAY//AAALAAUAAADXAY7/AAAKAAUAAADYAY7/AAALAAUAAADZAY7/AAAOAAgAAADZAY3/AAAKAAUAAADaAY3/AAALAAUAAADbAY3/AAALAAUAAADcAY3/AAALAAUAAADdAY3/AAALAAUAAADeAY3/AAALAAUAAADfAY3/AAALAAUAAADgAY3/AAALAAUAAADhAY3/AAALAAUAAADiAYz/AAAKAAUAAADjAYz/AAALAAUAAADkAYz/AAALAAUAAADlAYz/AAALAAUAAADmAYz/AAALAAUAAADnAYz/AAALAAUAAADoAYz/AAALAAUAAADpAYv/AAAKAAUAAADqAYv/AAALAAUAAADrAYv/AAALAAUAAADsAYv/AAALAAUAAADtAYv/AAALAAUAAADuAYr/AAAKAAUAAADvAYr/AAALAAUAAADwAYr/AAALAAUAAADxAYn/AAAKAAUAAADyAYn/AAALAAUAAADzAYn/AAALAAUAAAD0AYj/AAAKAAUAAAD1AYj/AAALAAUAAAD2AYj/AAALAAUAAAD3AYj/AAALAAUAAAD4AYf/AAAKAAUAAAD5AYf/AAALAAUAAAD6AYf/AAALAAUAAAD7AYb/AAAKAAUAAAD8AYb/AAALAAUAAAD9AYb/AAALAAUAAAD+AYb/AAALAAUAAAD/AYb/AAAOAAgAAAD/AYX/AAAKAAUAAAAAAoX/AAALAAUAAAABAoX/AAALAAUAAAACAoX/AAALAAUAAAADAoX/AAALAAUAAAAEAoX/AAALAAUAAAAFAoX/AAALAAUAAAAGAoT/AAAKAAUAAAAHAoT/AAALAAUAAAAIAoT/AAALAAUAAAAJAoT/AAALAAUAAAAKAoT/AAALAAUAAAALAoT/AAALAAUAAAAMAoT/AAALAAUAAAAyAbT/AAAOAAgAAAA0AbP/AAAOAAgAAAA4AbH/AAAOAAgAAABGAbD/AAAOAAgAAABIAa//AAAOAAgAAAA7AbD/AAAOAAUAAAA+AbH/AAAOAAUAAABLAa3/AAAOAAgAAABMAav/AAAOAAgAAABPAan/AAAOAAgAAABTAaT/AAAOAAgAAABqAZ7/AAAOAAUAAAB5AaP/AAAOAAUAAACEAaj/AAAOAAgAAACHAab/AAAOAAgAAACJAaP/AAAOAAgAAACMAZz/AAAOAAgAAACaAZb/AAAOAAUAAAC/AZb/AAAOAAUAAADJAZX/AAAOAAgAAADMAZT/AAAOAAgAAADQAZL/AAAOAAgAAADXAY//AAAOAAgAAADiAY3/AAAOAAgAAADpAYz/AAAOAAgAAADuAYv/AAAOAAgAAADxAYr/AAAOAAgAAAD7AYf/AAAOAAgAAAD4AYj/AAAOAAgAAAD0AYn/AAAOAAgAAAAGAoX/AAAOAAgAAAANAoT/AAALAAUAAAAOAoT/AAALAAUAAAAPAoT/AAALAAUAAAAQAoT/AAALAAUAAAARAoT/AAALAAUAAAASAoT/AAALAAUAAAATAoT/AAALAAUAAAAUAoT/AAALAAUAAAAVAoP/AAAKAAUAAAAWAoP/AAALAAUAAAAXAoP/AAALAAUAAAAYAoL/AAAKAAUAAAAZAoL/AAALAAUAAAAaAoL/AAALAAUAAAAbAoL/AAALAAUAAAAcAoL/AAALAAUAAAAdAoH/AAAKAAUAAAAeAoH/AAALAAUAAAAfAoH/AAALAAUAAAAgAoH/AAALAAUAAAAhAoH/AAALAAUAAAAiAoD/AAAKAAUAAAAjAoD/AAALAAUAAAAkAn//AAAKAAUAAAAlAn//AAALAAUAAAAmAn7/AAAKAAUAAAAnAn7/AAALAAUAAAAoAn7/AAALAAUAAAApAn7/AAALAAUAAAAqAn3/AAAKAAUAAAArAn3/AAALAAUAAAAsAn3/AAALAAUAAAAtAn3/AAALAAUAAAAuAn3/AAALAAUAAAAvAnz/AAAKAAUAAAAwAnz/AAALAAUAAAAxAnz/AAALAAUAAAAyAnz/AAALAAUAAAAzAnz/AAALAAUAAAA0Anv/AAAKAAUAAAA1Anv/AAALAAUAAAA2Anv/AAALAAUAAAA3Anr/AAAKAAUAAAA4Anr/AAALAAUAAAA5Anr/AAALAAUAAAA6Anr/AAALAAUAAAA7Anr/AAAOAAgAAAA7Ann/AAAKAAUAAAA8Ann/AAALAAUAAAA9Ann/AAALAAUAAAA+Ann/AAALAAUAAAA/Ann/AAALAAUAAABAAnn/AAALAAUAAABBAnj/AAAKAAUAAABCAnj/AAALAAUAAABDAnj/AAALAAUAAABEAnj/AAALAAUAAABFAnf/AAAKAAUAAABGAnf/AAALAAUAAABHAnf/AAALAAUAAABIAnf/AAALAAUAAABJAnf/AAALAAUAAABKAnf/AAALAAUAAABLAnb/AAAKAAUAAABMAnb/AAALAAUAAABNAnb/AAALAAUAAABOAnb/AAALAAUAAABPAnb/AAALAAUAAABQAnb/AAALAAUAAABRAnb/AAALAAUAAABSAnb/AAALAAUAAABTAnb/AAALAAUAAABUAnb/AAALAAUAAABVAnX/AAAKAAUAAABWAnX/AAALAAUAAABXAnX/AAALAAUAAABYAnX/AAALAAUAAABZAnX/AAALAAUAAABaAnX/AAALAAUAAABbAnX/AAALAAUAAABcAnX/AAALAAUAAABdAnX/AAALAAUAAABeAnX/AAALAAUAAABfAnT/AAAKAAUAAABgAnT/AAALAAUAAABhAnT/AAALAAUAAABiAnT/AAALAAUAAABjAnT/AAALAAUAAABkAnT/AAALAAUAAABlAnT/AAALAAUAAABmAnT/AAALAAUAAABnAnP/AAAKAAUAAABoAnP/AAALAAUAAABpAnP/AAALAAUAAABqAnP/AAALAAUAAABrAnP/AAALAAUAAABsAnP/AAALAAUAAABtAnP/AAALAAUAAABuAnP/AAALAAUAAABvAnP/AAALAAUAAABwAnP/AAALAAUAAABxAnP/AAALAAUAAAByAnP/AAALAAUAAABzAnP/AAALAAUAAAB0AnP/AAALAAUAAAB1AnP/AAALAAUAAAB2AnP/AAALAAUAAAB3AnP/AAALAAUAAAB4AnP/AAALAAUAAAB5AnP/AAALAAUAAAB6AnP/AAALAAUAAAB7AnP/AAALAAUAAAB8AnP/AAALAAUAAAB9AnP/AAALAAUAAAB+AnL/AAAKAAUAAAB/AnL/AAALAAUAAACAAnL/AAALAAUAAACBAnL/AAALAAUAAACCAnL/AAALAAUAAACDAnL/AAALAAUAAACEAnL/AAALAAUAAACFAnL/AAALAAUAAACGAnL/AAALAAUAAACHAnH/AAALAAUAAACIAnH/AAALAAUAAACJAnH/AAALAAUAAACKAnH/AAALAAUAAACLAnH/AAALAAUAAACMAnH/AAALAAUAAACNAnH/AAALAAUAAACOAnH/AAALAAUAAACPAnH/AAALAAUAAACQAnH/AAALAAUAAACRAnH/AAALAAUAAACSAnD/AAALAAUAAACTAnD/AAALAAUAAACUAnD/AAALAAUAAACVAnD/AAALAAUAAACWAnD/AAALAAUAAACXAm//AAALAAUAAACYAm//AAALAAUAAACZAm//AAALAAUAAACaAm//AAALAAUAAACbAm//AAALAAUAAACcAm//AAALAAUAAACdAm7/AAAAAAEAAACdAm3/AAAAAAEAAACdAmz/AAAAAAEAAACdAmv/AAAAAAEAAACdAmr/AAAAAAEAAACdAmn/AAAAAAEAAACdAmj/AAAAAAEAAACdAmf/AAAAAAEAAACdAm//AAAAAAIAAACeAm//AAAAAAIAAACfAm//AAAAAAIAAACgAm//AAAAAAIAAACDAnH/AAAAAAEAAACDAnD/AAAAAAEAAACDAm//AAAAAAEAAACDAm7/AAAAAAEAAACDAm3/AAAAAAEAAACDAmz/AAAAAAEAAACDAmv/AAAAAAEAAACDAmr/AAAAAAEAAACDAmn/AAAAAAEAAACDAmj/AAAAAAEAAACDAmf/AAAAAAEAAACDAo//AAAFAAIAAAAVAoT/AAAOAAgAAAAYAoP/AAAOAAgAAAAdAoL/AAAOAAgAAAAiAoH/AAAOAAgAAAAkAoD/AAAOAAgAAAAmAn//AAAOAAgAAAAqAn7/AAAOAAgAAAAvAn3/AAAOAAgAAAA0Anz/AAAOAAgAAAA3Anv/AAAOAAgAAABBAnn/AAAOAAgAAABFAnj/AAAOAAgAAABLAnf/AAAOAAgAAABVAnb/AAAOAAgAAABfAnX/AAAOAAgAAABnAnT/AAAOAAgAAAB+AnP/AAAOAAgAAAA=")
+tile_set = ExtResource("2_6q6xy")
+script = ExtResource("2_y8ech")
+
+[node name="Player" parent="." instance=ExtResource("4_pu1xk")]
+position = Vector2(-4, 250)
+contrable = true
+
+[node name="Marker2D" type="Marker2D" parent="Player"]
+position = Vector2(4, -11)
+gizmo_extents = 1000.0
+
+[node name="Text" type="Node" parent="."]
+
+[node name="Starting text" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 14.0
+offset_top = 146.0
+offset_right = 185.0
+offset_bottom = 169.0
+text = "Starting text"
+run_on_startup = true
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_tj04d"), SubResource("Resource_3u2od"), SubResource("Resource_00w6x"), SubResource("Resource_h7c8q")])
+metadata/_edit_use_anchors_ = true
+
+[node name="Introduction" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 188.0
+offset_top = 123.0
+offset_right = 359.0
+offset_bottom = 146.0
+text = "Introduction"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_jjf6c")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Introduction" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Goal" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 453.0
+offset_top = 123.0
+offset_right = 624.0
+offset_bottom = 146.0
+text = "Goal"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_77hc8")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Goal" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Remberd" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 668.0
+offset_top = 69.0
+offset_right = 839.0
+offset_bottom = 92.0
+text = "Remberd"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_uqs1v")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Remberd" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Not easy" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 1024.0
+offset_top = -192.0
+offset_right = 1195.0
+offset_bottom = -169.0
+text = "Not easy"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_mx2nl")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Not easy" instance=ExtResource("7_gdc2s")]
+position = Vector2(78, 76)
+
+[node name="Fighting" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 1420.0
+offset_top = -251.0
+offset_right = 1591.0
+offset_bottom = -228.0
+text = "Fighting"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_h7n4p")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Fighting" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Insignificant" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 2028.0
+offset_top = -466.0
+offset_right = 2199.0
+offset_bottom = -443.0
+text = "Insignificant"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_rgdpb")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Insignificant" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Keepin on" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 2791.0
+offset_top = -753.0
+offset_right = 2962.0
+offset_bottom = -730.0
+text = "Keepin on"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_t4noh")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Keepin on" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="BoldersEnd" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 3442.0
+offset_top = -976.0
+offset_right = 3613.0
+offset_bottom = -953.0
+text = "BoldersEnd"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_ecdw5")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/BoldersEnd" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Breath" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 3839.0
+offset_top = -1073.0
+offset_right = 4010.0
+offset_bottom = -1050.0
+text = "Breath"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_0wxw7")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Breath" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="NotDone" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 4226.0
+offset_top = -1184.0
+offset_right = 4397.0
+offset_bottom = -1161.0
+text = "NotDone"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_f53kg")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/NotDone" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Fire" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 4721.0
+offset_top = -1298.0
+offset_right = 4892.0
+offset_bottom = -1275.0
+text = "Fire"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_qinak")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Fire" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="WhoKnows" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 5607.0
+offset_top = -1681.0
+offset_right = 5778.0
+offset_bottom = -1658.0
+text = "WhoKnows"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_2elsv")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/WhoKnows" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Looking" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 6384.0
+offset_top = -1839.0
+offset_right = 6555.0
+offset_bottom = -1816.0
+text = "Looking"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_bi50m")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Looking" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Hades" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 6929.0
+offset_top = -1824.0
+offset_right = 7100.0
+offset_bottom = -1801.0
+text = "Hades"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_xa4yd")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Hades" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Hephaestus" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 7372.0
+offset_top = -1903.0
+offset_right = 7543.0
+offset_bottom = -1880.0
+text = "Hephaestus"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_saw3k")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Hephaestus" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="MeteorsEnd" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 7971.0
+offset_top = -2048.0
+offset_right = 8142.0
+offset_bottom = -2025.0
+text = "MeteorsEnd"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_xreec")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/MeteorsEnd" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="Lookin" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 8369.0
+offset_top = -2111.0
+offset_right = 8540.0
+offset_bottom = -2088.0
+text = "Lookin"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_d27c5")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Lookin" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="AlmostDone" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 8723.0
+offset_top = -2192.0
+offset_right = 8894.0
+offset_bottom = -2169.0
+text = "AlmostDone"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_rjm7q")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/AlmostDone" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="PeakSight" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 9048.0
+offset_top = -2272.0
+offset_right = 9219.0
+offset_bottom = -2249.0
+text = "PeakSight"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_ia5hw")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/PeakSight" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 76)
+
+[node name="ABitMore" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 9447.0
+offset_top = -2348.0
+offset_right = 9618.0
+offset_bottom = -2325.0
+text = "ABitMore"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_8u45p")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/ABitMore" instance=ExtResource("7_gdc2s")]
+position = Vector2(54, 88)
+
+[node name="But" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 9805.0
+offset_top = -2413.0
+offset_right = 9976.0
+offset_bottom = -2390.0
+text = "But"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_fnvtd")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/But" instance=ExtResource("7_gdc2s")]
+position = Vector2(57, 106)
+
+[node name="Appearence" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 9952.0
+offset_top = -2413.0
+offset_right = 10123.0
+offset_bottom = -2390.0
+text = "Appearence"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_152yy")])
+metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBox" parent="Text/Appearence" instance=ExtResource("7_gdc2s")]
+position = Vector2(79, 106)
+
+[node name="Done" parent="Text" instance=ExtResource("3_3q2w3")]
+offset_left = 185.0
+offset_top = 114.0
+offset_right = 356.0
+offset_bottom = 137.0
+text = "Done"
+lines = Array[ExtResource("4_0v8nh")]([SubResource("Resource_8hc7x"), SubResource("Resource_epq28"), SubResource("Resource_sdm3n"), SubResource("Resource_vwtei"), SubResource("Resource_y2wkp"), SubResource("Resource_a8qvv"), SubResource("Resource_4eydr")])
+
+[node name="CheckpointManager" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("8_5dx75")
+player = NodePath("../Player")
+
+[node name="Checkpoint" parent="CheckpointManager" instance=ExtResource("8_fwijq")]
+position = Vector2(1128, -84)
+
+[node name="Checkpoint2" parent="CheckpointManager" instance=ExtResource("8_fwijq")]
+position = Vector2(2567, -516)
+
+[node name="Checkpoint3" parent="CheckpointManager" instance=ExtResource("8_fwijq")]
+position = Vector2(4425, -1108)
+
+[node name="Checkpoint7" parent="CheckpointManager" instance=ExtResource("8_fwijq")]
+position = Vector2(3494, -852)
+
+[node name="Checkpoint4" parent="CheckpointManager" instance=ExtResource("8_fwijq")]
+position = Vector2(6376, -1540)
+
+[node name="Checkpoint5" parent="CheckpointManager" instance=ExtResource("8_fwijq")]
+position = Vector2(7960, -1908)
+
+[node name="Checkpoint6" parent="CheckpointManager" instance=ExtResource("8_fwijq")]
+position = Vector2(10020, -2260)
+
+[node name="Triggers" type="Node" parent="."]
+
+[node name="ShakeTrigger" parent="Triggers" instance=ExtResource("7_gdc2s")]
+position = Vector2(899, 19)
+
+[node name="BolderSpawner" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("9_wruyl")
+target = NodePath("../Player")
+
+[node name="BolderSpawnPath" type="StaticBody2D" parent="BolderSpawner"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BolderSpawner/BolderSpawnPath"]
+polygon = PackedVector2Array(996, -178, 1158, -236, 1475, -254, 2019, -480, 2331, -476, 2492, -632, 3055, -857, 3895, -1065, 1722, -1456)
+
+[node name="PathFollower" type="RayCast2D" parent="BolderSpawner"]
+position = Vector2(1060, 0)
+target_position = Vector2(0, -1383)
+collision_mask = 2
+
+[node name="BolderSpawnPos" type="Marker2D" parent="BolderSpawner/PathFollower"]
+
+[node name="Timer" type="Timer" parent="BolderSpawner"]
+wait_time = 2.0
+
+[node name="BarrelDestroyer" type="Area2D" parent="BolderSpawner"]
+position = Vector2(-55, 101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BolderSpawner/BarrelDestroyer"]
+shape = SubResource("WorldBoundaryShape2D_a06gw")
+
+[node name="Craters" type="Node" parent="." node_paths=PackedStringArray("main_tilemap", "camera") groups=["triggerable"]]
+script = SubResource("GDScript_nupc2")
+main_tilemap = NodePath("../TileMapLayer")
+camera = NodePath("../Camera")
+
+[node name="CratersTiles" type="TileMapLayer" parent="Craters"]
+tile_map_data = PackedByteArray("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")
+tile_set = ExtResource("2_6q6xy")
+collision_enabled = false
+
+[node name="SubTiles" type="TileMapLayer" parent="Craters"]
+visible = false
+tile_map_data = PackedByteArray("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")
+tile_set = ExtResource("2_6q6xy")
+collision_enabled = false
+
+[node name="Crater" parent="Craters" instance=ExtResource("11_upre1")]
+size = Vector2i(6, 4)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater" instance=ExtResource("7_gdc2s")]
+position = Vector2(-163, 13)
+
+[node name="Crater2" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(4896, -1264)
+size = Vector2i(6, 6)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater2" instance=ExtResource("7_gdc2s")]
+position = Vector2(-81, 44)
+
+[node name="Crater3" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(5152, -1296)
+size = Vector2i(6, 5)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater3" instance=ExtResource("7_gdc2s")]
+position = Vector2(-202, 10)
+
+[node name="Crater4" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(5504, -1552)
+size = Vector2i(7, 4)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater4" instance=ExtResource("7_gdc2s")]
+position = Vector2(-58, -38)
+
+[node name="Crater5" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(5616, -1552)
+size = Vector2i(6, 5)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater5" instance=ExtResource("7_gdc2s")]
+position = Vector2(-58, -38)
+
+[node name="Crater6" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(6304, -1696)
+size = Vector2i(25, 11)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater6" instance=ExtResource("7_gdc2s")]
+position = Vector2(-44, 173)
+
+[node name="Crater7" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(6864, -1712)
+size = Vector2i(14, 3)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater7" instance=ExtResource("7_gdc2s")]
+position = Vector2(-75, -45)
+rotation = -0.523598
+
+[node name="Crater8" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(7360, -1760)
+size = Vector2i(5, 4)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater8" instance=ExtResource("7_gdc2s")]
+position = Vector2(-44, -22)
+
+[node name="Crater9" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(7648, -1856)
+size = Vector2i(7, 4)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater9" instance=ExtResource("7_gdc2s")]
+position = Vector2(-44, -36)
+
+[node name="Crater10" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(7952, -1920)
+size = Vector2i(5, 4)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater10" instance=ExtResource("7_gdc2s")]
+position = Vector2(-44, -24)
+
+[node name="Crater11" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(5712, -1600)
+size = Vector2i(24, 13)
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater11" instance=ExtResource("7_gdc2s")]
+position = Vector2(365, 93)
+back = true
+
+[node name="Crater12" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(6512, -1696)
+size = Vector2i(6, 10)
+sub = true
+no_shake = null
+
+[node name="TriggerBox" parent="Craters/Crater12" instance=ExtResource("7_gdc2s")]
+position = Vector2(184, -52)
+back = true
+
+[node name="Limit" parent="Craters" instance=ExtResource("11_upre1")]
+position = Vector2(576, 0)
+size = Vector2i(1, 15)
+no_shake = null
+
+[node name="MeteorSpawner" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("12_wweye")
+player = NodePath("../Player")
+
+[node name="Timer" type="Timer" parent="MeteorSpawner"]
+
+[node name="DebugSpawn" type="Marker2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(10233, -2383)
+script = SubResource("GDScript_jrflt")
+player = NodePath("../Player")
+
+[node name="Pauser" type="Node" parent="."]
+process_mode = 3
+script = SubResource("GDScript_62c5b")
+
+[node name="AresStuff" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("13_c517a")
+player = NodePath("../Player")
+
+[node name="Ares" parent="AresStuff" node_paths=PackedStringArray("player") instance=ExtResource("13_gpuk2")]
+position = Vector2(10320, -2315)
+player = NodePath("../../Player")
+
+[node name="AresMarkers" type="Node" parent="AresStuff" node_paths=PackedStringArray("ares")]
+script = ExtResource("14_buxyi")
+ares = NodePath("../Ares")
+
+[node name="AresMarker" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(8022, -1920)
+
+[node name="AresMarker2" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(7752, -1856)
+jump_velocity = -100.0
+
+[node name="AresMarker3" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(7430, -1776)
+jump_velocity = -25.0
+
+[node name="AresMarker4" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(7080, -1712)
+jump_velocity = -75.0
+
+[node name="AresMarker6" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(7210, -1696)
+jump_velocity = -90.0
+
+[node name="AresMarker5" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(6967, -1696)
+jump_velocity = -130.0
+
+[node name="AresMarker7" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(6696, -1696)
+jump_velocity = -95.0
+
+[node name="AresMarker8" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(6616, -1696)
+jump_velocity = -95.0
+
+[node name="AresMarker9" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(6176, -1408)
+jump_velocity = -135.0
+
+[node name="AresMarker10" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(6076, -1424)
+jump_velocity = -140.0
+
+[node name="AresMarker11" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5987, -1456)
+jump_velocity = -130.0
+
+[node name="AresMarker12" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5914, -1488)
+jump_velocity = -90.0
+
+[node name="AresMarker13" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5865, -1504)
+jump_velocity = -90.0
+
+[node name="AresMarker14" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5816, -1520)
+jump_velocity = -132.0
+
+[node name="AresMarker15" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5703, -1552)
+jump_velocity = -90.0
+
+[node name="AresMarker16" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5605, -1552)
+jump_velocity = -105.0
+
+[node name="AresMarker17" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5015, -1296)
+jump_velocity = -75.0
+
+[node name="AresMarker19" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5147, -1264)
+jump_velocity = -90.0
+
+[node name="AresMarker20" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(5094, -1280)
+jump_velocity = -90.0
+
+[node name="AresMarker18" parent="AresStuff/AresMarkers" instance=ExtResource("14_vrmu7")]
+position = Vector2(4649, -1152)
+jump_velocity = -95.0
+
+[node name="Triggers" type="Node" parent="AresStuff"]
+
+[node name="AresTrigger" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(9488, -2260)
+print = "\"Get back here!\""
+
+[node name="AresTrigger2" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(8474, -2055)
+print = "\"Who do you think you are?\""
+
+[node name="AresTrigger3" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(7715, -1932)
+print = "\"I will tell you what you are!\""
+
+[node name="AresTrigger4" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(6512, -1763)
+print = "\"You are weak!\""
+
+[node name="AresTrigger5" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(5741, -1640)
+print = "\"You are puny!\""
+
+[node name="AresTrigger6" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(4860, -1275)
+print = "\"You are small!\""
+
+[node name="AresTrigger7" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(3839, -984)
+print = "\"You are mortal\""
+
+[node name="AresTrigger8" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(1867, -350)
+print = "\"You are worthless\""
+
+[node name="StopSpearing" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(655, 146)
+action = 1
+
+[node name="AresTrigger9" parent="AresStuff/Triggers" groups=["triggerable"] instance=ExtResource("16_bxuo7")]
+position = Vector2(32, 199)
+print = "\"You are NOTHING!!\""
+single_use = true
+
+[connection signal="begin" from="Player" to="TileMapLayer" method="_on_player_begin"]
+[connection signal="dies" from="Player" to="AresStuff/Ares" method="_on_player_dies"]
+[connection signal="push" from="Player" to="Camera" method="_on_player_push"]
+[connection signal="push" from="Player" to="Craters/Limit" method="_triggered"]
+[connection signal="push" from="Player" to="AresStuff/Ares" method="_on_player_push"]
+[connection signal="slide_signal" from="Text/Starting text" to="Player" method="_start_label_signal"]
+[connection signal="trigger" from="Text/Not easy/TriggerBox" to="BolderSpawner" method="_begain"]
+[connection signal="trigger" from="Text/BoldersEnd/TriggerBox" to="Camera" method="_on_shake_end_trigger"]
+[connection signal="trigger" from="Text/BoldersEnd/TriggerBox" to="BolderSpawner" method="_end"]
+[connection signal="trigger" from="Text/MeteorsEnd/TriggerBox" to="MeteorSpawner/Timer" method="stop"]
+[connection signal="trigger" from="Text/Appearence/TriggerBox" to="AresStuff/Ares" method="_appear_triggered"]
+[connection signal="trigger" from="Triggers/ShakeTrigger" to="Camera" method="_on_shake_trigger"]
+[connection signal="timeout" from="BolderSpawner/Timer" to="BolderSpawner" method="_spawn"]
+[connection signal="body_entered" from="BolderSpawner/BarrelDestroyer" to="BolderSpawner" method="_destroy_barrel"]
+[connection signal="trigger" from="Craters/Crater/TriggerBox" to="MeteorSpawner/Timer" method="start"]
+[connection signal="timeout" from="MeteorSpawner/Timer" to="MeteorSpawner" method="_on_timer_timeout"]
+[connection signal="past" from="AresStuff" to="Player" method="_on_past"]
+[connection signal="done" from="AresStuff/Ares" to="Text/Done" method="_triggered"]
+[connection signal="freeze" from="AresStuff/Ares" to="Player" method="_on_freeze"]
+[connection signal="nothing" from="AresStuff/Ares" to="Player" method="_on_ares_nothing"]

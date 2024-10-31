@@ -1,0 +1,219 @@
+[gd_scene load_steps=19 format=3 uid="uid://dms2w8s3krl7y"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_1vmye"]
+[ext_resource type="Texture2D" uid="uid://camrvqfui8mg2" path="res://assets/art/player.png" id="2_2uh0c"]
+[ext_resource type="Script" path="res://scripts/player_name_input.gd" id="3_tarih"]
+[ext_resource type="PackedScene" uid="uid://d2v1xwq5lmkhv" path="res://stuff/label.tscn" id="4_r35v4"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="5_xuvb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik4dd"]
+size = Vector2(4, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o38ol"]
+size = Vector2(2, 2)
+
+[sub_resource type="Animation" id="Animation_lhyct"]
+resource_name = "idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4k5tn"]
+resource_name = "run_left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_73mry"]
+resource_name = "run_right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcmym"]
+_data = {
+"idle": SubResource("Animation_lhyct"),
+"run_left": SubResource("Animation_4k5tn"),
+"run_right": SubResource("Animation_73mry")
+}
+
+[sub_resource type="Shader" id="Shader_josi6"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	float a = texture(TEXTURE, UV).a;
+	a = round(a);
+	COLOR.a = a;
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lo7m"]
+shader = SubResource("Shader_josi6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f8oe8"]
+font_size = 14
+shadow_size = 0
+
+[sub_resource type="Resource" id="Resource_rkir2"]
+script = ExtResource("5_xuvb2")
+text = "\"No\""
+time = 1.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_ralsu"]
+script = ExtResource("5_xuvb2")
+text = "\"I\""
+time = 0.5
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_vfrvf"]
+script = ExtResource("5_xuvb2")
+text = "\"AM\""
+time = 0.5
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_j384h"]
+script = ExtResource("5_xuvb2")
+text = "\"{{cap_player_name}}!!!\""
+time = 1.0
+signal_id = 1
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_1vmye")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2uh0c")
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ik4dd")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 264
+collision_mask = 264
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_o38ol")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tcmym")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("3_tarih")
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.26
+anchor_top = 0.454
+anchor_right = 0.819
+anchor_bottom = 0.549
+offset_left = 0.23999
+offset_top = -0.0960083
+offset_right = 0.255951
+offset_bottom = 0.123993
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.385
+anchor_top = 0.58
+anchor_right = 0.542
+anchor_bottom = 0.701
+offset_left = 0.23999
+offset_top = 0.0799866
+offset_right = -0.192017
+offset_bottom = -0.124008
+text = "Submit"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 206.0
+offset_top = 114.0
+offset_right = 351.0
+offset_bottom = 137.0
+text = "What is your name"
+
+[node name="Talkin" parent="." instance=ExtResource("4_r35v4")]
+material = SubResource("ShaderMaterial_6lo7m")
+offset_left = 26.0
+offset_top = -45.0
+offset_right = 197.0
+offset_bottom = -22.0
+text = "Talkin"
+label_settings = SubResource("LabelSettings_f8oe8")
+lines = Array[ExtResource("5_xuvb2")]([SubResource("Resource_rkir2"), SubResource("Resource_ralsu"), SubResource("Resource_vfrvf"), SubResource("Resource_j384h")])
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="talk" from="CanvasLayer" to="Talkin" method="_triggered"]
+[connection signal="text_submitted" from="CanvasLayer/LineEdit" to="CanvasLayer" method="_on_submit"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_submit"]
+[connection signal="slide_signal" from="Talkin" to="." method="_on_talkin_slide_signal"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://buj83884k02qf"]
+
+[ext_resource type="Script" path="res://scripts/bolder.gd" id="1_kxcgh"]
+[ext_resource type="Texture2D" uid="uid://5c2jyo4t5sfb" path="res://assets/art/bolder.png" id="2_toim3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wx8ms"]
+rough = true
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5c7kd"]
+radius = 7.0
+
+[node name="Bolder" type="RigidBody2D"]
+position = Vector2(3888, -956)
+collision_layer = 12
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_wx8ms")
+script = ExtResource("1_kxcgh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("2_toim3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5c7kd")

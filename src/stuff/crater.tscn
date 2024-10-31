@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://chaiu77ufqu8y"]
+
+[ext_resource type="Script" path="res://scripts/crater.gd" id="1_0yug2"]
+
+[node name="Crater" type="Node2D" groups=["triggerable"]]
+position = Vector2(4560, -1152)
+script = ExtResource("1_0yug2")
+activated = null
+sub = null
+metadata/_edit_group_ = true
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 96, 0, 96, 64, 0, 64, 0, 0)
+width = 2.0
+default_color = Color(1, 0, 0, 1)

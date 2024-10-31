@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0bnyxvvxfsgq"]
+
+[ext_resource type="Texture2D" uid="uid://c3035wgtlcw3n" path="res://assets/art/meteor.png" id="1_v8os5"]
+[ext_resource type="Script" path="res://scripts/meteor_particle.gd" id="2_6d5lx"]
+
+[node name="MeteorParticle" type="Sprite2D"]
+texture = ExtResource("1_v8os5")
+hframes = 6
+vframes = 2
+script = ExtResource("2_6d5lx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

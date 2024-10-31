@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://buuipo1jgis5d"]
+
+[ext_resource type="Script" path="res://scripts/trigger_box.gd" id="1_xak3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbylr"]
+size = Vector2(5, 100)
+
+[node name="TriggerBox" type="Area2D"]
+collision_layer = 16777215
+collision_mask = 16777215
+script = ExtResource("1_xak3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kbylr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

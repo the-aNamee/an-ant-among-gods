@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://7rw8krkk23ah"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ql8qm"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ql8qm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391
+anchor_top = 0.213
+anchor_right = 0.554
+anchor_bottom = 0.806
+offset_left = -0.216019
+offset_top = -0.012001
+offset_right = -0.104004
+offset_bottom = -0.144012
+
+[node name="Easy" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Easy"
+
+[node name="Normal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Normal"
+
+[node name="Hard" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hard"
+
+[node name="Imposible" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Imposible"
+
+[connection signal="pressed" from="VBoxContainer/Easy" to="." method="_on_start" binds= [0]]
+[connection signal="pressed" from="VBoxContainer/Normal" to="." method="_on_start" binds= [1]]
+[connection signal="pressed" from="VBoxContainer/Hard" to="." method="_on_start" binds= [2]]
+[connection signal="pressed" from="VBoxContainer/Imposible" to="." method="_on_start" binds= [3]]

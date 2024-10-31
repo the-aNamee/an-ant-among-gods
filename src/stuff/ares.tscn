@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://bytyht21p1nxb"]
+
+[ext_resource type="Texture2D" uid="uid://pylgudnatn8q" path="res://assets/art/ares.png" id="1_nm5dm"]
+[ext_resource type="Script" path="res://scripts/ares.gd" id="1_ssb8n"]
+[ext_resource type="PackedScene" uid="uid://d2v1xwq5lmkhv" path="res://stuff/label.tscn" id="3_hn2yh"]
+[ext_resource type="Script" path="res://scripts/line.gd" id="4_caga2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44r8j"]
+size = Vector2(16, 84)
+
+[sub_resource type="Resource" id="Resource_gnirk"]
+script = ExtResource("4_caga2")
+text = "\"I can't belive that she would...\""
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_onpe4"]
+script = ExtResource("4_caga2")
+text = "\"Who is that?\""
+time = 2.0
+signal_id = 0
+
+[sub_resource type="Resource" id="Resource_ney22"]
+script = ExtResource("4_caga2")
+text = "\"Well I need to take my anger out on somebody!\""
+time = 2.0
+signal_id = 1
+
+[sub_resource type="Shader" id="Shader_josi6"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	float a = texture(TEXTURE, UV).a;
+	a = round(a);
+	COLOR.a = a;
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lo7m"]
+shader = SubResource("Shader_josi6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f8oe8"]
+font_size = 14
+shadow_size = 0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nhvpi"]
+normal = Vector2(-1, 0)
+
+[node name="Ares" type="CharacterBody2D" groups=["ares"]]
+collision_layer = 524300
+collision_mask = 524300
+script = ExtResource("1_ssb8n")
+
+[node name="Sprite" type="Node2D" parent="."]
+
+[node name="BackArm" type="Sprite2D" parent="Sprite"]
+position = Vector2(0, -8)
+texture = ExtResource("1_nm5dm")
+centered = false
+offset = Vector2(-24, -3)
+hframes = 5
+frame = 4
+
+[node name="BackLeg" type="Sprite2D" parent="Sprite"]
+position = Vector2(-2, 14)
+texture = ExtResource("1_nm5dm")
+centered = false
+offset = Vector2(-24, -3)
+hframes = 5
+frame = 4
+
+[node name="FrontLeg" type="Sprite2D" parent="Sprite"]
+position = Vector2(2, 14)
+texture = ExtResource("1_nm5dm")
+centered = false
+offset = Vector2(-24, -3)
+hframes = 5
+frame = 4
+
+[node name="Body" type="Sprite2D" parent="Sprite"]
+position = Vector2(0, -1)
+texture = ExtResource("1_nm5dm")
+hframes = 5
+frame = 1
+
+[node name="Helmet" type="Sprite2D" parent="Sprite"]
+position = Vector2(0, -29)
+texture = ExtResource("1_nm5dm")
+offset = Vector2(0, 3)
+hframes = 5
+
+[node name="FrontArm" type="Sprite2D" parent="Sprite"]
+position = Vector2(-1, -8)
+texture = ExtResource("1_nm5dm")
+centered = false
+offset = Vector2(-24, -3)
+hframes = 5
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_44r8j")
+
+[node name="AppearanceTimer" type="Timer" parent="."]
+wait_time = 1000.0
+one_shot = true
+
+[node name="SpearTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Talkin" parent="." instance=ExtResource("3_hn2yh")]
+offset_left = -177.0
+offset_top = -91.0
+offset_right = -6.0
+offset_bottom = -68.0
+text = "Talkin"
+lines = Array[ExtResource("4_caga2")]([SubResource("Resource_gnirk"), SubResource("Resource_onpe4"), SubResource("Resource_ney22")])
+
+[node name="RealTalkin" type="Label" parent="." groups=["label", "triggerable"]]
+material = SubResource("ShaderMaterial_6lo7m")
+offset_left = -177.0
+offset_top = -91.0
+offset_right = -6.0
+offset_bottom = -68.0
+text = "Talkin"
+label_settings = SubResource("LabelSettings_f8oe8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SideTalkin" type="Label" parent="." groups=["label", "triggerable"]]
+material = SubResource("ShaderMaterial_6lo7m")
+offset_left = 29.0
+offset_top = -91.0
+offset_right = 200.0
+offset_bottom = -68.0
+text = "Talkin"
+label_settings = SubResource("LabelSettings_f8oe8")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="JumpLine" type="Line2D" parent="."]
+visible = false
+position = Vector2(0, 42)
+points = PackedVector2Array(0, 0, -12.395, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+width = 1.0
+default_color = Color(0, 0, 1, 1)
+
+[node name="Attack" type="Area2D" parent="." groups=["hit"]]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(10, 0)
+shape = SubResource("WorldBoundaryShape2D_nhvpi")
+
+[connection signal="timeout" from="AppearanceTimer" to="Talkin" method="_triggered"]
+[connection signal="timeout" from="SpearTimer" to="." method="_on_spear_timer_timeout"]
+[connection signal="slide_signal" from="Talkin" to="." method="_on_label_slide_signal"]
